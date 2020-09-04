@@ -112,12 +112,12 @@ function sortAndShowProducts(sortCriteria, categoriesArray){
     productosArray= sortProducts(currentSortCriteria, productosArray);
 
     
-    mostrarProductos(array)
+    mostrarProductos(productosArray);
 }
 
 
 document.addEventListener("DOMContentLoaded", function(){
-    getJSONData(PRODUCTS_UR).then(function(resultObj){
+    getJSONData(PRODUCTS_URL).then(function(resultObj){
         if (resultObj.status === "ok"){
             sortAndShowProducts(ORDER_ASC_BY_NAME, resultObj.data);
         }
