@@ -16,7 +16,8 @@ document.getElementById("boton").addEventListener("click", function(e){
     }
 
     if (todoCompleto === true){
-        window.location = "inicio.html"
+        window.location = "inicio.html";
+        localStorage.setItem("Usuario", JSON.stringify({ mail: correo.value}))
     }
 
     if(todoCompleto === false){
