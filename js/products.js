@@ -18,10 +18,10 @@ function mostrarProductos(array){
             ((precioMax == undefined) || (precioMax != undefined && parseInt(producto.cost) <= precioMax))){
     
         
-            productos += "<img src="    + producto.imgSrc + " alt='Foto del producto' >";
+            productos += "<a href=product-info.html> <img src="    + producto.imgSrc + " alt='Foto del producto' >";
         productos += "<p>Nombre: " +  producto.name + "</p> <br>";
         productos += "<p>Descripción: " +  producto.description + "</p><br>";
-        productos += "<p>Precio" + producto.cost + producto.currency + "</p><br><hr>";
+        productos += "<p>Precio" + producto.cost + producto.currency + "</p><br><hr></a>" ;
         }
     }
     document.getElementById("losProductos").innerHTML = productos
