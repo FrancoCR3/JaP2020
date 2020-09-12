@@ -31,13 +31,33 @@
    <p>Aqui se desplegara la información sobre el producto</p>
    <p>Por motivos de simplicidad siempre se desplegara el mismo producto.</p><hr>
   </div>
-  <p id="nombreProducto">Nombre:</p>
-  <p id="descripcionProducto">Descripción:</p>
-  <p id="precioProducto">Precio:</p>
-  <p id="cantidadProducto">Cantidad vendidos:</p>
-  <p id="categoriaProducto">Categoria:</p>
+  <p id="nombreProducto"></p> 
+  <p id="descripcionProducto"></p>
+  <p id="precioProducto"></p>
+  <p id="cantidadProducto"></p>
+  <p id="categoriaProducto">:</p>
+  <h2>Fotos del producto:</h2>
   <p id="imagenesProducto"></p>
-  <p id="desplegarComentarios"></p>
+   <hr>
+   <h2 class="text-center p-4">Sección de comentarios:</h2>
+   <div  class="container mt-5">
+    <p id="desplegarComentarios"></p>
+  </div>
+  <h2 class="text-center p-4">Haz tu propio comentario:</h2>
+  <form class="container mt-5">
+  <label for="comentario" style="float: left; ">Comentario:</label>
+  <textarea name="comentario" id="comentario" cols="40" rows="5"></textarea>
+  <label for="puntuacion">Seleccione su puntuacion:</label>
+  <select name="puntuacion" id="puntuacion">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+  </select>
+   <input type="submit" value="Enviar comentario">
+  </form>
+  
 
   <footer class="text-muted">
     <div class="container">

@@ -64,8 +64,8 @@ document.getElementById("bFiltrar").addEventListener("click", function(){
 //borrar
 document.getElementById("bBorrar").addEventListener("click", function(){
 
-    document.getElementById("pMin").value = 0
-    document.getElementById("pMax").value = 0
+    document.getElementById("pMin").value = ""
+    document.getElementById("pMax").value = ""
     precioMax = undefined
     precioMin = undefined 
 

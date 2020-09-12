@@ -25,7 +25,8 @@ function mostrarComentarios(array){
 
     
         
-        carComentarios += "<p>" + datosComentarios.score + "</p>"
+        carComentarios += "<p><strong>" + datosComentarios.user + "</strong>: " + datosComentarios.description + "</p><br>"
+        + "<p>" + datosComentarios.dateTime + "</p> <p><strong>Puntuación:" + datosComentarios.score + "/5</strong></p> <hr>"
         
     }
     document.getElementById("desplegarComentarios").innerHTML = carComentarios
@@ -47,11 +48,11 @@ document.addEventListener("DOMContentLoaded", function(e){
             let categoria = document.getElementById("categoriaProducto");
             
         
-            nombre.innerHTML = infoProductos.name;
-            descripcion.innerHTML = infoProductos.description;
-            precio.innerHTML = infoProductos.cost;
-            cantidad.innerHTML = infoProductos.soldCount;
-            categoria.innerHTML = infoProductos.category;
+            nombre.innerHTML = "<p><strong>Nombre:</strong>" + infoProductos.name; + "</p>"
+            descripcion.innerHTML = "<p><strong>Descripción:</strong>" + infoProductos.description; + "</p>"
+            precio.innerHTML = "<p><strong>Precio:</strong>" + infoProductos.cost +  infoProductos.currency + "</p>"
+            cantidad.innerHTML = "<p><strong>Cantidad:</strong>" + infoProductos.soldCount  + "</p>"
+            categoria.innerHTML =  "<p><strong>Categoria:</strong>" + infoProductos.category; + "</p>"
             mostrarImagenes(infoProductos.images)
 
 
