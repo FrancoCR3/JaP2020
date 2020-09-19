@@ -48,8 +48,16 @@ document.addEventListener("DOMContentLoaded", function(e){
   
   let parrafo = document.getElementById("nombreNav");
 
+  let mostrarBoton = document.getElementById("mostrarElBoton");
+
   if (nombre) {
     nombre = JSON.parse(nombre);
     parrafo.innerText = parrafo.innerText + nombre.mail
+    mostrarBoton.style = "display: inline"
   }
+
+  document.getElementById("salir").addEventListener("click", function(){
+    localStorage.removeItem("Usuario");
+    window.location = "index.html";
+  })
 });
