@@ -1,6 +1,7 @@
 var infoProductos = {};
 var comentarios = {};
-
+var productosArray ={};
+var infoProductos ={};
 function mostrarImagenes(array){
     let imagenes = "";
     for(let i = 0; i < array.length; i++){
@@ -32,6 +33,20 @@ function mostrarComentarios(array){
     document.getElementById("desplegarComentarios").innerHTML = carComentarios
 }
 
+function mostrarProductosRelacionados(productosArray,productosRelacionados);{
+    let losProductosRelacionados =""
+
+    productosRelacionados.forEach(function(elNumero) {
+        losProductosRelacionados += "<p>" + productosArray[elNumero].name + "</p>"
+        losProductosRelacionados += "<img src="    + productosArray[elNumero].imgSrc + " alt='Foto del producto' >";
+        losProductosRelacionados += "<p>Precio:" + productosArray[elNumero].cost + productosArray[elNumero].currency + "</p>"
+
+
+        
+    });
+    document.getElementById("losProductosRelacionados").innerHTML = losProductosRelacionados
+}
+
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
@@ -60,6 +75,18 @@ document.addEventListener("DOMContentLoaded", function(e){
         }
     });
 });
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    getJSONData(PRODUCTS_URL).then(function(resultObj){
+        if (resultObj.status === "ok")
+        {
+            productosArray = resultObj.data;
+            mostrarProductosRelacionados(productosArray,infoProductos.relatedProducts);
+        }
+    })
+});
+
 
 document.addEventListener("DOMContentLoaded", function(e){
     getJSONData(PRODUCT_INFO_COMMENTS_URL).then(function(resultObj){
