@@ -33,13 +33,13 @@ function mostrarComentarios(array){
     document.getElementById("desplegarComentarios").innerHTML = carComentarios
 }
 
-function mostrarProductosRelacionados(productosArray,productosRelacionados);{
+function mostrarProductosRelacionados(productosArray, productosRelacionados){
     let losProductosRelacionados =""
 
     productosRelacionados.forEach(function(elNumero) {
-        losProductosRelacionados += "<p>" + productosArray[elNumero].name + "</p>"
-        losProductosRelacionados += "<img src="    + productosArray[elNumero].imgSrc + " alt='Foto del producto' >";
-        losProductosRelacionados += "<p>Precio:" + productosArray[elNumero].cost + productosArray[elNumero].currency + "</p>"
+        losProductosRelacionados += "<a href='products.html'><p>" + productosArray[elNumero].name + "</p>"
+        losProductosRelacionados += "<img src="    + productosArray[elNumero].imgSrc + " alt='Foto del producto' style='width: 150px; height: 150px;' >";
+        losProductosRelacionados += "<p>Precio:" + productosArray[elNumero].cost + productosArray[elNumero].currency + "</p></a><hr>"
 
 
         
