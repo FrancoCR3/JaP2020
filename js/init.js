@@ -52,8 +52,8 @@ document.addEventListener("DOMContentLoaded", function(e){
 
   if (nombre) {
     nombre = JSON.parse(nombre);
-    parrafo.innerText = parrafo.innerText + nombre.mail
-    mostrarBoton.style = "display: inline"
+    parrafo.innerHTML =  nombre.mail ;
+    mostrarBoton.style = "display: inline" ;
   }
 
   document.getElementById("salir").addEventListener("click", function(){

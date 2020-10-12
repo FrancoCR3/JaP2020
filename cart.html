@@ -53,14 +53,56 @@
       </div>
     </div>
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 5 (Fecha de entrega: 11/10/2020) y Entrega 6 (Fecha de entrega: 25/10/2020).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+   <h1 class="container">Articulos a comprar:</h1>
+  <div id="mostrarTabla">
+  </div>
+  <div class="form-group">
+     <h3>residencia:</h3>
+    <input id="montevideo" name="envio" type="radio" value="1" required="">
+    <label for="montevideo">Montevideo: 1 día</label> <br>
+
+    <input id="canelones" name="envio" type="radio" value="2" required="">
+    <label for="canelones">Canelones: 2 días</label> <br>
+
+    <input id="otro" name="envio" type="radio" value="4" required="">
+    <label for="otro">Otro departamento: 4 días</label> <br>
+
+  </div>
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    Comprar
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">¿Desea confirmar su compra?</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <label for="nombre">Nombre y apellido</label><br>
+            <input type="text" id="nombre" name="nombre" ><br>
+            <label for="direccion">Direccion</label><br>
+            <input type="text" id="direccion" name="direccion" ><br><br>
+        
+          </form> 
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-primary" onclick="window.location.href='inicio.html'">Confirmar compra</button>
+        </div>
+      </div>
     </div>
   </div>
+
+
+
+
+
   <div id="spinner-wrapper">
     <div class="lds-ring">
       <div></div>
