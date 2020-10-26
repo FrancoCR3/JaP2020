@@ -41,7 +41,8 @@
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
       <div class="btn-group" id="mostrarElBoton" style="display: none;">
-        <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="nombreNav">
+        <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false" id="nombreNav">
 
         </button>
         <div class="dropdown-menu">
@@ -53,27 +54,105 @@
       </div>
     </div>
   </nav>
-   <h1 class="container">Articulos a comprar:</h1>
+  <h1 class="container">Articulos a comprar:</h1>
   <div id="mostrarTabla">
   </div>
   <div class="form-group">
-     <h3>residencia:</h3>
-    <input id="montevideo" name="envio" type="radio" value="1" required="">
-    <label for="montevideo">Montevideo: 1 día</label> <br>
+    <h3>Tipo de envío:</h3>
+    <form class="needs-validation" novalidate>
+      <input id="impuesto0" name="envio" type="radio" value="1.15" required="" checked>
+      <label for="impuesto0">Premium (2-5 días)</label> <br>
 
-    <input id="canelones" name="envio" type="radio" value="2" required="">
-    <label for="canelones">Canelones: 2 días</label> <br>
+      <input id="impuesto1" name="envio" type="radio" value="1.07" required="">
+      <label for="impuesto1">Express (5-8 días)</label> <br>
 
-    <input id="otro" name="envio" type="radio" value="4" required="">
-    <label for="otro">Otro departamento: 4 días</label> <br>
+      <input id="impuesto2" name="envio" type="radio" value="1.05" required="">
+      <label for="impuesto1">Standard (12 a 15 días)</label> <br>
+    </form>
+  </div>
+
+  <div class="form-group">
+    <h3>Datos de envío:</h3>
+
+
+
+
+    <form class="needs-validation" novalidate>
+      <div class="form-row">
+        <div class="col-md-4 mb-3">
+          <label for="Calle">Calle</label>
+          <input type="text" class="form-control" id="Calle" placeholder="Calle" required>
+          <div class="valid-feedback">
+            Correcto!
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="Numero">Numero</label>
+          <input type="number" class="form-control" id="Numero" placeholder="Numero" required>
+          <div class="valid-feedback">
+            Correcto!
+          </div>
+        </div>
+
+
+
+        <div class="form-row">
+          <div class="col-md-4 mb-3">
+            <label for="Esquina">Esquina</label>
+            <input type="text" class="form-control" id="Esquina" placeholder="Esquina" required>
+            <div class="valid-feedback">
+              Correcto!
+            </div>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="text">Pais</label>
+            <input type="Pais" class="form-control" id="Pais" placeholder="Pais" required>
+            <div class="valid-feedback">
+              Correcto!
+            </div>
+          </div>
+
+        </div>
+      
+        
+
+
+        
+    </form>
+
+
+
+
+
+
+
 
   </div>
+
+
+
+  <h3>Precio en pesos con envío incluido:</h3>
+  <div id="precioConEnvio"></div>
+
+
   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-    Comprar
+    Confirmar compra
   </button>
   
+  </br>
+
+
+
+
+
+
+  <br>
+
+
+
   <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -82,25 +161,71 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div class="modal-body">
-          <form>
-            <label for="nombre">Nombre y apellido</label><br>
-            <input type="text" id="nombre" name="nombre" ><br>
-            <label for="direccion">Direccion</label><br>
-            <input type="text" id="direccion" name="direccion" ><br><br>
-        
-          </form> 
-        </div>
+
+        <form class="needs-validation" novalidate>
+          <select name="formaDePago" id="formaDePago">
+            <option value="tarjetaDeCredito" selected>Tarjeta de Credito</option>
+            <option value="transferenciaBancaria">Transferencia bancaria</option>
+          </select>
+
+
+          <div id="formModal" class="form-group">
+
+            
+
+    <label for="Nombre">Nombre</label>
+    <input type="text" class="form-control" id="usuario" placeholder="Nombre" required>
+    <div class="valid-feedback">
+      Correcto!
+    </div>
+
+    <label for="Numero">Numero de la tarjeta</label>
+    <input type="number" class="form-control" id="numero" placeholder="Numero de la tarjeta" required>
+    <div class="valid-feedback">
+      Correcto!
+    </div>
+
+    <label for="Credito">Contraseña</label>
+    <input type="password" class="form-control" id="contraseña" placeholder="Contraseña" required>
+    <div class="valid-feedback">
+      Correcto!
+    </div>
+
+          </div>
+          <button class="btn btn-primary" type="submit">confirmar compra</button>
+        </form>
+
+
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-          <button type="button" class="btn btn-primary" onclick="window.location.href='inicio.html'">Confirmar compra</button>
+          
+            
         </div>
       </div>
     </div>
   </div>
 
 
-
+  <script>
+    
+    (function () {
+      'use strict';
+      window.addEventListener('load', function () {
+        
+        var forms = document.getElementsByClassName('needs-validation');
+        
+        var validation = Array.prototype.filter.call(forms, function (form) {
+          form.addEventListener('submit', function (event) {
+            if (form.checkValidity() === false) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+            form.classList.add('was-validated');
+          }, false);
+        });
+      }, false);
+    })();
+  </script>
 
 
   <div id="spinner-wrapper">
